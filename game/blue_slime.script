@@ -1,0 +1,22 @@
+
+function init(self)
+	goForward(self)
+end
+
+function goForward(self)
+	sprite.set_hflip("#sprite", true)
+	local pos = go.get_position()
+	go.animate(go.get_id(), "position.x", go.PLAYBACK_ONCE_FORWARD, pos.x + 1500, go.EASING_LINEAR, 10, 0, goBackward)
+end
+
+function goBackward(self)
+	sprite.set_hflip("#sprite", false)
+	local pos = go.get_position()
+	go.animate(go.get_id(), "position.x", go.PLAYBACK_ONCE_FORWARD, pos.x - 1500, go.EASING_LINEAR, 10, 0, goForward)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("collision_response") then
+		msg.post("/player/player#player", "enemies")
+	end
+end

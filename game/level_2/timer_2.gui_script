@@ -1,0 +1,25 @@
+function init(self)
+	self.count = 60
+	sound.play("game:/sound#shooterTheme")
+	self.timer = timer.delay(1, true, function()
+		self.count = self.count - 1		
+		local node = gui.get_node("timer_text")
+		gui.set_text(node, self.count)
+
+		if self.count == 0 then
+			timer.cancel(self.timer)
+			msg.post("#", "timeout")
+		end
+	end)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("timeout") then
+		msg.post("game:/loader#loader", "next_level")
+		msg.post("game:/guis#game_over", "set_current_lvl", { level = 3 } )
+		sound.stop("game:/sound#shooterTheme")
+	elseif message_id == hash("stop_timer") then
+		timer.cancel(self.timer)
+	end
+end
+

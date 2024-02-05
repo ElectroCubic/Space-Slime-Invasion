@@ -1,0 +1,24 @@
+function init(self)
+	self.timer = timer.delay(1, true, fireBullet)
+	local pos = go.get_position()
+	local to = 2640 - pos.x
+	go.animate(go.get_id(), "position.x", go.PLAYBACK_LOOP_PINGPONG, to, go.EASING_INOUTSINE, 3)
+end
+
+function fireBullet()
+	sound.play("game:/sound#laser_2")
+	local bulletid = factory.create("#bulletFactory")
+	local bulletPos = go.get_position(bulletid)
+	local to = bulletPos.y - 5000
+	go.animate(bulletid, "position.y", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_LINEAR, 0.8, 0, function()
+		go.delete(bulletid) 
+	end)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("trigger_response") and message.enter then
+		go.delete()
+		particlefx.play("#death")
+		sound.play("#boom")
+	end
+end

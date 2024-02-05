@@ -1,0 +1,7 @@
+local health = 50
+
+function on_message(self, message_id, message, sender)
+	health = health - 1
+	sound.play("game:/sound#player_hit")
+	gui.set_text(gui.get_node("hp_text"), health)
+end

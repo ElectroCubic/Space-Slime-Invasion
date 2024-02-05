@@ -1,0 +1,17 @@
+
+function init(self)
+	self.insideWin = false
+	sound.play("game:/sound#PlatformerTheme")
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("player_interact") and self.insideWin then
+		msg.post("game:/loader#loader", "next_level")
+		msg.post("game:/guis#game_over", "set_current_lvl", { level = 2 } )
+		sound.stop("game:/sound#PlatformerTheme")
+	elseif message_id == hash("collision_response") then
+		self.insideWin = true
+	else
+		self.insideWin = false
+	end
+end

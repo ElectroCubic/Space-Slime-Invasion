@@ -1,0 +1,29 @@
+function init(self)
+	sound.play("game:/sound#player_hit")
+	msg.post(".", "acquire_input_focus")
+	msg.post("#", "hide_game_over")
+	self.active = false
+	self.current_level = 0
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("show_game_over") then
+		msg.post("#", "enable")
+		self.active = true
+	elseif message_id == hash("hide_game_over") then
+		msg.post("#", "disable")
+		self.active = false
+	elseif message_id == hash("set_current_lvl") then
+		self.current_level = message.level
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("touch") and action.pressed then
+		local retry = gui.get_node("retry")
+		if gui.pick_node(retry, action.x, action.y) then
+			msg.post("/loader#loader", "load_level", { level = self.current_level } )
+			msg.post("#", "hide_game_over")
+		end
+	end
+end

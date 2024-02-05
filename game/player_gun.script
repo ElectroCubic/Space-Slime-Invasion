@@ -1,0 +1,66 @@
+function init(self)
+	msg.post("@render:", "use_camera_projection")
+	msg.post("operator#camera", "acquire_camera_focus")
+	msg.post(".", "acquire_input_focus")
+	self.direction = vmath.vector3(0)
+	self.ready_fire = true
+	self.health = 50
+end
+
+function update(self, dt)
+	local position = go.get_position()
+	if position.x >= 180 and position.x <= 2830 then
+		position.x = position.x + self.direction.x * 1000 * dt
+	else
+		if self.direction.x == 1 and position.x > 2830 then
+			position.x = 2830
+		elseif self.direction.x == -1 and position.x < 180 then
+			position.x = 180
+		end
+	end
+	go.set_position(position)
+end
+
+function on_message(self, message_id, message, sender)
+	if message_id == hash("player_hit") then
+		self.health = self.health - 1
+
+		if self.health < 1 then
+			msg.post("game:/guis#game_over", "show_game_over")
+			msg.post("game:/loader#loader", "unload_level")
+			sound.stop("game:/sound#shooterTheme")
+		end
+	end
+end
+
+function on_input(self, action_id, action)
+	if action_id == hash("left") then
+		if action.pressed then
+			self.direction.x = -1
+		elseif action.released then
+			self.direction.x = 0
+		end
+
+	elseif action_id == hash("right") then
+		if action.pressed then
+			self.direction.x = 1
+		elseif action.released then
+			self.direction.x = 0
+		end
+
+	elseif action_id == hash("fire") then
+		if action.pressed and self.ready_fire then
+			sound.play("game:/sound#laser_1")
+			local bulletid = factory.create("level_2:/player_gun/player_gun#bulletFactory")
+			local bulletPos = go.get_position(bulletid)
+			local to = bulletPos.y + 5000
+			go.animate(bulletid, "position.y", go.PLAYBACK_ONCE_FORWARD, to, go.EASING_LINEAR, 0.8, 0, function()
+				go.delete(bulletid) 
+			end)
+			self.ready_fire = false
+			self.timer = timer.delay(1, false, function()
+				self.ready_fire = true
+			end)
+		end
+	end
+end

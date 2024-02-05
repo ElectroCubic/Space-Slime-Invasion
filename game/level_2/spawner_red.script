@@ -1,0 +1,12 @@
+
+math.randomseed(os.clock()*100000000000)
+
+function init(self)
+	timer.delay(2.5, true, function()
+		local enemy_ids = collectionfactory.create("/spawner_red#spaceship1_spawner")
+		local enemy_pos = go.get_position(go.get_id())
+		local xpos = math.random(120, 3000)
+		local ypos = math.random(2000, 3000)
+		go.set_position(vmath.vector3(xpos, ypos, 0))
+	end)
+end

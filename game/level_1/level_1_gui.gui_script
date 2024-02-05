@@ -1,0 +1,7 @@
+
+local health = 10
+
+function on_message(self, message_id, message, sender)
+	health = health - 1
+	gui.set_text(gui.get_node("player_hNum"), health)
+end
