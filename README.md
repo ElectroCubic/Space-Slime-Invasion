@@ -1,5 +1,5 @@
 # Space Slime Invasion
-## Can you Survive the Invasion? 
+## *Can you Survive the Invasion?* 
 
 This game was made during the GameDevUtopia x Defold Game Jam.
 Hosted by GameDevUtopia. We hope you enjoy playing this outer space fantasy platformer and shooter game!!
@@ -27,12 +27,11 @@ But the enemies outnumber you and they call their mothership for backup. They le
 - E - Interact
 
 
-- # **Credits**:
+# **Credits**:
 ## Game Programming, Design and Music By -
 ## Anush Bundel & Ashwin S.
 
-### External Credits:
-
+## External Credits:
 - ## Game Assets By Kenney and Freepik
 - ## **SFX by Kenney and BGM by ElectroCubic**
 
