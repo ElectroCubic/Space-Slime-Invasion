@@ -42,4 +42,4 @@ But the enemies outnumber you and they call their mothership for backup. They le
 
 - ## **Freepik.com BG Images**:
 1. [Main Bg](https://www.freepik.com/free-photos-vectors/outer-space-background)
-2. [Ending Bg](https://www.freepik.com/free-vector/realistic-galaxy-background)
+2. [Ending Bg](https://www.freepik.com/free-vector/realistic-galaxy-background_14960493.htm#pag...)
