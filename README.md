@@ -41,5 +41,5 @@ But the enemies outnumber you and they call their mothership for backup. They le
 3. [Space-shooter-redux](https://www.kenney.nl/assets/space-shooter-redux)
 
 - ## **Freepik.com BG Images**:
-1. [Main Bg](https://www.freepik.com/free-photos-vectors/outer-space-background)
+1. [Main Bg](https://www.freepik.com/free-vector/gradient-galaxy-background_14658063.htm#query=outer%20space%20background&position=2&from_view=keyword&track=ais&uuid=ea7477d0-1004-44ef-a69c-5605a193d111)
 2. [Ending Bg](https://www.freepik.com/free-vector/realistic-galaxy-background_14960493.htm#pag...)
