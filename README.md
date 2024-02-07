@@ -16,7 +16,7 @@ The gameplay is mostly based on a platformer, with a slight twist of space shoot
 ## Storyline of the Game:
 For those people who are interested in the lore, you can interpret the story in however way you like, but the main story revolves around you, the player, travelling to a far-away galaxy in cryo-sleep, and suddenly you are invaded by dangerous Space Slimes.
 
-These slimes look harmless at first glance but their their body is poisonous in nature and very lethal to a human being. The space shuttle activated its spike and saw defense mechanism to prevent the intruders from entering your space shuttle. But alas, the slimes remain unaffected by it. So in order to defend yourself, you have to reach the space shuttle's defense turret and defend against hoards of enemy spaceships attacking your space shuttle. 
+These slimes look harmless at first glance but their body is poisonous in nature and very lethal to a human being. The space shuttle activated its spike and saw defense mechanism to prevent the intruders from entering your space shuttle. But alas, the slimes remain unaffected by it. So in order to defend yourself, you have to reach the space shuttle's defense turret and defend against hoards of enemy spaceships attacking your space shuttle. 
 
 But the enemies outnumber you and they call their mothership for backup. They leave you with no choice other than escaping from the enemy by activating the Slip-drive. You have to act quickly to find and activate the Slip-drive to reach safely back to your Home planet. The survival of man-kind depends upon you... so make your every action count!
 
