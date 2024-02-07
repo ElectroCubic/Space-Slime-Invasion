@@ -21,10 +21,10 @@ These slimes look harmless at first glance but their their body is poisonous in 
 But the enemies outnumber you and they call their mothership for backup. They leave you with no choice other than escaping from the enemy by activating the Slip-drive. You have to act quickly to find and activate the Slip-drive to reach safely back to your Home planet. The survival of man-kind depends upon you... so make your every action count!
 
 ## Game Controls: 
-A - Move Left
-D - Move Right
-Space - Jump/Shoot
-E - Interact
+- A - Move Left
+- D - Move Right
+- Space - Jump/Shoot
+- E - Interact
 
 
 - # **Credits**:
